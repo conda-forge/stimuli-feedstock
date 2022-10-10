@@ -1,5 +1,5 @@
 {% set name = "stimuli" %}
-{% set version = "0.4.1" %}
+{% set version = "0.4.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/stimuli-{{ version }}.tar.gz
-  sha256: b55ca30a0a1c30735f5ed349055a2ab1b7ee0158fc83d82c9390c0b9e1fb3e7f
+  sha256: 36479bf20ad5f16a0962fc153356ff88b1a1a3740c55436923803f3935db68fa
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -24,10 +24,11 @@ requirements:
     - matplotlib-base
     - numpy >=1.21
     - opencv
+    - psutil
     - python >=3.8
+    - python-sounddevice
     - scipy
     - screeninfo
-    - python-sounddevice
 
 test:
   imports:
