@@ -24,10 +24,11 @@ requirements:
     - matplotlib-base
     - numpy >=1.21
     - opencv
+    - psutil
     - python >=3.8
+    - python-sounddevice
     - scipy
     - screeninfo
-    - python-sounddevice
 
 test:
   imports:
