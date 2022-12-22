@@ -1,5 +1,5 @@
 {% set name = "stimuli" %}
-{% set version = "0.4.2" %}
+{% set version = "0.4.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/stimuli-{{ version }}.tar.gz
-  sha256: 36479bf20ad5f16a0962fc153356ff88b1a1a3740c55436923803f3935db68fa
+  sha256: 8375b8b42d98a7b63dcc9950932be22ddfedbbc234a4dd24cc8bd7d3fb791af3
 
 build:
   noarch: python
