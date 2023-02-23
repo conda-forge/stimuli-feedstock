@@ -12,14 +12,16 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
+  entry_points:
+    - stimuli-sys_info = stimuli.commands.sys_info:run
+    - stimuli_cross = stimuli.commands.stimuli_cross:run
 
 requirements:
   host:
     - pip
     - python >=3.8
     - setuptools >=61.0.0
-    - wheel
   run:
     - matplotlib-base
     - numpy >=1.21
@@ -39,10 +41,11 @@ test:
     - pip check
 
 about:
-  home: https://github.com/mscheltienne/simple-stimuli
+  home: https://mscheltienne.github.io/simple-stimuli/dev/index.html
   summary: Simple auditory and visual stimuli that do not require PsychoPy.
   license: MIT
   license_file: LICENSE
+  dev_url: https://github.com/mscheltienne/simple-stimuli
 
 extra:
   recipe-maintainers:
