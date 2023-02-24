@@ -1,13 +1,15 @@
 About stimuli
 =============
 
-Home: https://github.com/mscheltienne/simple-stimuli
+Home: https://mscheltienne.github.io/simple-stimuli/dev/index.html
 
 Package license: MIT
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/stimuli-feedstock/blob/main/LICENSE.txt)
 
 Summary: Simple auditory and visual stimuli that do not require PsychoPy.
+
+Development: https://github.com/mscheltienne/simple-stimuli
 
 Current build status
 ====================
