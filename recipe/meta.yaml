@@ -10,7 +10,6 @@ source:
   sha256: 8375b8b42d98a7b63dcc9950932be22ddfedbbc234a4dd24cc8bd7d3fb791af3
 
 build:
-  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   number: 2
   entry_points:
@@ -18,6 +17,8 @@ build:
     - stimuli_cross = stimuli.commands.stimuli_cross:run
 
 requirements:
+  build:
+    - {{ cdt('mesa-libgl-devel') }}  # [linux]
   host:
     - pip
     - python >=3.8
