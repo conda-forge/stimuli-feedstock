@@ -28,7 +28,7 @@ requirements:
     - numpy >=1.21
     - opencv
     - psutil
-    - python >=3.8
+    - python
     - python-sounddevice
     - scipy
     - screeninfo
