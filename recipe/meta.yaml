@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 2
   entry_points:
     - stimuli-sys_info = stimuli.commands.sys_info:run
     - stimuli_cross = stimuli.commands.stimuli_cross:run
@@ -39,6 +39,8 @@ test:
     - pip
   commands:
     - pip check
+    - stimuli-sys_info --help
+    - stimuli_cross --help
 
 about:
   home: https://mscheltienne.github.io/simple-stimuli/dev/index.html
