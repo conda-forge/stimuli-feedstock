@@ -17,14 +17,6 @@ build:
     - stimuli_cross = stimuli.commands.stimuli_cross:run
 
 requirements:
-  build:
-    - {{ cdt('mesa-libgl-devel') }}  # [linux]
-    - {{ cdt('mesa-libegl-devel') }}  # [linux]
-    - {{ cdt('mesa-dri-drivers') }}  # [linux]
-    - {{ cdt('libselinux') }}        # [linux]
-    - {{ cdt('libxdamage') }}        # [linux]
-    - {{ cdt('libxfixes') }}         # [linux]
-    - {{ cdt('libxxf86vm') }}        # [linux]
   host:
     - pip
     - python
@@ -34,6 +26,7 @@ requirements:
     - numpy >=1.21
     - opencv
     - psutil
+    - py-opencv
     - python
     - python-sounddevice
     - scipy
