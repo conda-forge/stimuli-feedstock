@@ -10,6 +10,7 @@ source:
   sha256: 8375b8b42d98a7b63dcc9950932be22ddfedbbc234a4dd24cc8bd7d3fb791af3
 
 build:
+  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   number: 2
   entry_points:
@@ -19,14 +20,14 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python >=3.8
     - setuptools >=61.0.0
   run:
     - matplotlib-base
     - numpy >=1.21
     - opencv
     - psutil
-    - python
+    - python >=3.8
     - python-sounddevice
     - scipy
     - screeninfo
