@@ -26,7 +26,6 @@ requirements:
     - numpy >=1.21
     - opencv
     - psutil
-    - py-opencv
     - python
     - python-sounddevice
     - scipy
