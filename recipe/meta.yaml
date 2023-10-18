@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 3
   entry_points:
     - stimuli-sys_info = stimuli.commands.sys_info:run
     - stimuli_cross = stimuli.commands.stimuli_cross:run
@@ -21,7 +21,7 @@ requirements:
   host:
     - pip
     - python >=3.8
-    - setuptools >=61.0.0
+    - setuptools >=64.0.0
   run:
     - matplotlib-base
     - numpy >=1.21
