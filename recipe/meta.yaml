@@ -1,5 +1,5 @@
 {% set name = "stimuli" %}
-{% set version = "0.5.0" %}
+{% set version = "1.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,31 +7,30 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/stimuli-{{ version }}.tar.gz
-  sha256: 9800a1223be1e4eb1a710770642fe6160e13c0c2feaee1a74141b0ce51082bdb
+  sha256: daf1ed741a34aba0796d772d25289735a99700f30c2d1cb520498aa8e839ac53
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
   entry_points:
-    - stimuli-sys_info = stimuli.commands.sys_info:run
-    - stimuli_cross = stimuli.commands.stimuli_cross:run
+    - stimuli = stimuli.commands.main:run
 
 requirements:
   host:
     - pip
-    - python >=3.10
+    - python >=3.11
     - setuptools >=64.0.0
   run:
+    - click >=8.1
     - matplotlib-base
-    - numpy >=1.21
-    - opencv
+    - numpy >=1.23
     - packaging
     - psutil
-    - python >=3.10
+    - pyserial
+    - python >=3.11
     - python-sounddevice
     - scipy
-    - screeninfo
 
 test:
   imports:
@@ -40,15 +39,14 @@ test:
     - pip
   commands:
     - pip check
-    - stimuli-sys_info --help
-    - stimuli_cross --help
+    - stimuli sys-info --help
 
 about:
-  home: https://mscheltienne.github.io/simple-stimuli/dev/index.html
-  summary: Simple auditory and visual stimuli that do not require PsychoPy.
+  home: https://mscheltienne.github.io/stimuli/
+  summary: Accurate aditory stimuli that do not require PsychoPy.
   license: MIT
   license_file: LICENSE
-  dev_url: https://github.com/mscheltienne/simple-stimuli
+  dev_url: https://github.com/mscheltienne/stimuli
 
 extra:
   recipe-maintainers:
