@@ -1,3 +1,4 @@
+{% set python_min = '3.11' %}
 {% set name = "stimuli" %}
 {% set version = "1.0.2" %}
 
@@ -6,20 +7,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/stimuli-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/stimuli-{{ version }}.tar.gz
   sha256: daf1ed741a34aba0796d772d25289735a99700f30c2d1cb520498aa8e839ac53
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   entry_points:
     - stimuli = stimuli.commands.main:run
 
 requirements:
   host:
     - pip
-    - python >=3.11
+    - python {{ python_min }}
     - setuptools >=64.0.0
   run:
     - click >=8.1
@@ -28,7 +29,7 @@ requirements:
     - packaging
     - psutil
     - pyserial
-    - python >=3.11
+    - python >={{ python_min }}
     - python-sounddevice
     - scipy
 
@@ -37,6 +38,7 @@ test:
     - stimuli
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
     - stimuli sys-info --help
