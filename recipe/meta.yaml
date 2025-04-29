@@ -28,6 +28,7 @@ requirements:
     - numpy >=1.23
     - packaging
     - psutil
+    - pynput
     - pyserial
     - python >={{ python_min }}
     - python-sounddevice
