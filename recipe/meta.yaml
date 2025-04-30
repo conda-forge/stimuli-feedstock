@@ -38,7 +38,10 @@ test:
   requires:
     - pip
     - python {{ python_min }}
-  script: run_test.sh
+  source_files:
+    - test.sh
+  commands:
+    - test.sh
 
 about:
   home: https://mscheltienne.github.io/stimuli/
