@@ -39,7 +39,7 @@ test:
     - pip
     - python {{ python_min }}
   commands:
-    - test.sh
+    - bash ${RECIPE_DIR}/test.sh
 
 about:
   home: https://mscheltienne.github.io/stimuli/
