@@ -38,8 +38,6 @@ test:
   requires:
     - pip
     - python {{ python_min }}
-  source_files:
-    - test.sh
   commands:
     - test.sh
 
