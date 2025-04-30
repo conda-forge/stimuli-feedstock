@@ -41,6 +41,7 @@ test:
     - pip
     - python {{ python_min }}
   commands:
+    - bash -c "DISPLAY=:1 python -c 'import stimuli'"
     - pip check
     - stimuli sys-info --help
 
