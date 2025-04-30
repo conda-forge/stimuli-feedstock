@@ -35,14 +35,10 @@ requirements:
     - scipy
 
 test:
-  imports:
-    - stimuli
   requires:
     - pip
     - python {{ python_min }}
-  commands:
-    - bash -c "DISPLAY=:1 python -c 'import stimuli'"
-    - pip check
+  script: run_test.sh
 
 about:
   home: https://mscheltienne.github.io/stimuli/
