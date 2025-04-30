@@ -39,7 +39,9 @@ test:
     - pip
     - python {{ python_min }}
   commands:
-    - bash ${RECIPE_DIR}/test.sh
+    - pip check
+    - "xvfb-run -a python -c \"import stimuli\""  # [linux]
+    - "python -c \"import surfer\""  # [not linux]
 
 about:
   home: https://mscheltienne.github.io/stimuli/
